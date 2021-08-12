@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+    <html lang="en" dir="ltr">
+
+    <head>
+        <title>Maze AI</title> 
+        <meta charset="utf-8">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="shortcut icon" href="#">
+    </head>
+
+    <!-- Header -->
+    <header class="w3-container w3-center w3-padding-48 w3-white">
+        <h1 class="header1"><b>Maze AI</b></h1>
+        <h6 class="header2"> Demo of maze solving AI using Q learning <span class="header2"></h6>
+    </header>
+
+        <body>
+            <!-- <h1>My Website</h1> -->
+            <button class="button" title="randomly generate a new maze" id="regenerate" onclick="regenerate()">generate new maze</button>
+            <button class="button" title="create your own maze" id="custom" onclick="custom()">create custom maze</button>
+            <div class="dropdown">
+                <button class="button" title="change color scheme" id="changeTheme" onclick="changeTheme()">change theme</button>
+                    <div id="changeThemeDropdown" class="dropdown-content">
+                        <a id="setDefault" onclick="setTheme()">Default</a>
+                        <a id="setBW" onclick="setTheme()">Black and White</a>
+                        <a id="setPosh" onclick="setTheme()">Posh</a>
+                        <a id="setSunset" onclick="setTheme()">Sunset</a>
+                    </div>
+            </div>
+            <button class="button" title="" id="start" onclick="start()">start AI</button>
+
+            <div class="score-container">
+            <div class="score-title">score for previous episode:</div>
+            <div class="iterations-title">iterations:</div>
+            <div class="episodes-title">episode:</div>
+            <div class="state-title">state:</div>
+            <div class="timer-title">timer:</div>
+            <div class="score" id="score">0.000</div>
+            <div class="iterations" id="iterations">0</div>
+            <div class="episodes" id="episodes">0</div>
+            <div class="state" id="state">asleep</div>
+            <div class="timer" id="timer">00:00.000</div>
+
+            <div id="result"></div>
+            <div id="iterDisplay"></div>
+
+            <div class="infoDisplay" id="sizeDisplay"></div>
+            <div class="infoDisplay" id="probDisplay"></div>
+
+            <div id="mazeBoard" class="board" height="400" width="800"></div>
+
+            <div id="sliderIndex">
+                <div class="slidercaption">height</div>
+                <div class="slidercontainer"><input type="range" min="4" max="12" value="7" class="slider" id="heightSlider"></div>
+                <div class="slidercaption">width</div>
+                <div class="slidercontainer"><input type="range" min="4" max="26" value="7" class="slider" id="widthSlider"></div>
+                <div class="slidercaption">wall probability</div>
+                <div class="slidercontainer"><input type="range" min="0" max="0.50" step="0.01" value="0.35" class="slider" id="probSlider"></div>
+            </div>
+
+
+            <p class="tag">Alexander White | University of Virginia</p>
+
+        </body>
+
+
+</html>
+
+

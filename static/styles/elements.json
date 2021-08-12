@@ -1,0 +1,14 @@
+{
+	"colors" : {
+		"player": "p",
+        "wall":   "w",
+        "goal":   "g",
+        "space":  "0"
+	}, 
+	"pictures" : {
+		"player": "",
+        "wall":   "x",
+        "goal":   "",
+        "space":  "0"
+	}	
+}
