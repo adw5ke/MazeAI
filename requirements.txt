@@ -1,4 +1,0 @@
-gunicorn==20.1.0
-python3-openid
-flask
-numpy
